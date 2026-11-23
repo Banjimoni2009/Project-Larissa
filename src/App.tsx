@@ -7,8 +7,9 @@ import Gallery from "./Pages/Gallery"
 import Blogs from "./Pages/Blogs"
 import ContactUs from "./Pages/ContactUs"
 import RequestTour from "./Pages/RequestTour"
-import { createContext, useState } from "react"
-export const ThemeContext = createContext({});
+import PropertyDetails from "./Pages/Property layout/nnn"
+import { useState } from "react"
+import { ThemeContext } from "./ThemeContext"
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/properties" element={<Properties />} />
+          <Route path="/properties/:slug" element={<PropertyDetails />} />
           <Route path="/amenities" element={<Amenities />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blogs" element={<Blogs />} />
