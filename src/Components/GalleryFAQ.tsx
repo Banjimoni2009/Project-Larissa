@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Minus, Plus } from "lucide-react"
+import { Minus, Plus } from "../imports"
 
 type GalleryFaqItem = {
   question: string

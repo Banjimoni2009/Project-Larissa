@@ -1,32 +1,37 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, Bed, Search } from "lucide-react"
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  Bed,
+  Search,
+  homeMain as LandingImg,
+  homeAward as Award,
+  homeSignature as Signature,
+  homeHandHeart as HandHeart,
+  homeFacilitiesIcon as Triangle2,
+  homePreferenceIcon as Home,
+  homeAccessIcon as Access,
+  homeGroup as Black,
+  homeLogo as Logo1,
+  homeLogo24 as Logo2,
+  homeLogo19 as Logo3,
+  homeLogo18 as Logo4,
+  homeLogo21 as Logo5,
+  homeLogo24 as Logo6,
+  homeRectangle109 as Bathroom,
+  homeRectangle1091 as Dinning,
+  homeRectangle1092 as Palour,
+  homeRectangle1093 as Rooftop,
+  homeRectangle1094 as Workspace,
+  homeRectangle1095 as Bedroom,
+  homeRectangle1096 as Stairs,
+  homeRectangle1097 as Interiors,
+} from "../imports"
 import Buttons from "../Components/Buttons"
-import LandingImg from '../assets/images/Home Image/Main Image.png'
-import Award from '../assets/images/Home Image/gold-award-laurel-wreath-accessories-decoration-chandelier 1.png'
-import Signature from '../assets/images/Home Image/Image.png'
-import HandHeart from '../assets/images/Home Image/hand-heart-fill.png'
-import Triangle2 from '../assets/images/Home Image/Facilities icon.png'
-import Home from '../assets/images/Home Image/Preference Icon.png'
-import Access from '../assets/images/Home Image/Access icon.png'
-import Black from '../assets/images/Home Image/Group.png'
-import Golf from '../assets/images/Home Image/Image (1).png'
-import Logo1 from '../assets/images/Home Image/Logo.png'
-import Logo2 from '../assets/images/Home Image/logo-24.png'
-import Logo3 from '../assets/images/Home Image/logo-19.png'
-import Logo4 from '../assets/images/Home Image/logo-18.png'
-import Logo5 from '../assets/images/Home Image/logo-21.png'
-import Logo6 from '../assets/images/Home Image/logo-24.png'
-import Bathroom from '../assets/images/Home Image/Rectangle 109.png'
-import Dinning from '../assets/images/Home Image/Rectangle 109 (1).png'
-import Palour from '../assets/images/Home Image/Rectangle 109 (2).png'
-import Rooftop from '../assets/images/Home Image/Rectangle 109 (3).png'
-import Workspace from '../assets/images/Home Image/Rectangle 109 (4).png'
-import Bedroom from '../assets/images/Home Image/Rectangle 109 (5).png'
-import Stairs from '../assets/images/Home Image/Rectangle 109 (6).png'
-// import Backyard from '../assets/images/Amenities Image/Image (6).png'
-import Interiors from '../assets/images/Home Image/Rectangle 109 (7).png'
 import { Link } from "react-router-dom"
 import FAQ from "../Components/FAQ"
 import Footer from "../Components/Footer"
+import Facilities from "../Components/Facilities"
 
 function Landing() {
   return (
@@ -190,33 +195,9 @@ function Landing() {
       <p className="p-6 sm:p-10 text-center text-3xl sm:text-5xl font-medium">Facility & Amenities</p>
 
       {/* Facility img */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* img */}
-        <img src={Golf} alt="" className="w-full" />
-        <div className=''>
-          <div className="grid justify-center items-center border-b-2 border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex font-semibold text-gray-500">Sports Facilities <span className="text-xs">01</span></p>
-          </div>
-          <div className="grid justify-center items-center border-b-2 border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex text-lg font-semibold ">The Lifestyle Center <span className="text-sm">02</span></p>
-          </div>
-          <div className="grid justify-center items-center border-b-2 border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex text-xl font-semibold ">Children's playground <span className="text-sm">03</span></p>
-          </div>
-          <div className="grid justify-center items-center border-b-2 border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex text-xl sm:text-3xl font-semibold ">Golf Central Playground <span className="text-lg">04</span></p>
-          </div>
-          <div className="grid justify-center items-center border-b-2 border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex text-xl font-semibold ">Retail & Lifestyle Center <span className="text-sm">05</span></p>
-          </div>
-          <div className="grid justify-center items-center border-b-2 border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex text-lg font-semibold ">Cluster clubhouse <span className="text-sm">06</span></p>
-          </div>
-          <div className="grid justify-center items-center border-gray-400">
-            <p className="p-5 sm:p-10 justify-baseline inline-flex font-semibold text-gray-500">Jogging track <span className="text-xs">07</span></p>
-          </div>
-        </div>
-      </div>
+      <Facilities />
+      {/* Awards & Recognition */}
+      <div className="bg-[#f5f5f5]">
       <div className="grid grid-cols-2 lg:grid-cols-4 m-4 sm:m-8 lg:m-15 shadow">
         <div className="col-span-2 lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-4 p-5 sm:p-8 lg:ml-10 lg:mb-10 lg:mr-30">
           <div className="lg:mt-40">
@@ -251,6 +232,7 @@ function Landing() {
         <div className="shadow flex justify-center items-center p-4"><img src={Logo4} alt="" className="max-w-full" /></div>
         <div className="shadow flex justify-center items-center p-4"><img src={Logo5} alt="" className="max-w-full" /></div>
         <div className="shadow flex justify-center items-center p-4"><img src={Logo6} alt="" className="max-w-full" /></div>
+      </div>
       </div>
       <div className="bg-black">
         <div className="">

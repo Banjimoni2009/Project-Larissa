@@ -1,5 +1,4 @@
-import { ContactRound, Mail, Phone } from "lucide-react"
-import HeroImage from "../assets/images/Home Image/Hero Image.png"
+import { ContactRound, Mail, Phone, homeHero as HeroImage } from "../imports"
 
 function ContactUs() {
   return (

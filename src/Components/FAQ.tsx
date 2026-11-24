@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react"
-import { Minus, Plus } from "lucide-react"
+import { Minus, Plus } from "../imports"
 
 type FaqItem = {
   question: string
@@ -34,7 +34,7 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="bg-gray-50 px-5 py-12 text-gray-900 md:py-16">
+    <section id="faq" className="bg-gray-50 px-5 py-12 text-gray-900 md:py-16">
       {/* FAQ heading and accordion list */}
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 md:gap-8">
         <h2 className="max-w-56 text-center text-3xl leading-tight font-medium md:text-4xl">

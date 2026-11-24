@@ -1,24 +1,25 @@
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import {
+  ChevronDown,
+  galleryImage4 as image4,
+  galleryImage5 as image5,
+  galleryImage6 as image6,
+  galleryImage7 as image7,
+  galleryImage8 as image8,
+  galleryImage9 as image9,
+  galleryImage10 as image10,
+  galleryImage11 as image11,
+  galleryImage12 as image12,
+  galleryImage13 as image13,
+  galleryImage14 as image14,
+  galleryImage15 as image15,
+  galleryImage16 as image16,
+  galleryImage17 as image17,
+  galleryContainer as imageContainer,
+} from "../imports"
 import Footer from "../Components/Footer"
 import GalleryFAQ from "../Components/GalleryFAQ"
-
-import image4 from "../assets/images/Gallery images/Image (4).png"
-import image5 from "../assets/images/Gallery images/Image (5).png"
-import image6 from "../assets/images/Gallery images/Image (6).png"
-import image7 from "../assets/images/Gallery images/Image (7).png"
-import image8 from "../assets/images/Gallery images/Image (8).png"
-import image9 from "../assets/images/Gallery images/Image (9).png"
-import image10 from "../assets/images/Gallery images/Image (10).png"
-import image11 from "../assets/images/Gallery images/Image (11).png"
-import image12 from "../assets/images/Gallery images/Image (12).png"
-import image13 from "../assets/images/Gallery images/Image (13).png"
-import image14 from "../assets/images/Gallery images/Image (14).png"
-import image15 from "../assets/images/Gallery images/Image (15).png"
-import image16 from "../assets/images/Gallery images/Image (16).png"
-import image17 from "../assets/images/Gallery images/Image (17).png"
-import imageContainer from "../assets/images/Gallery images/Image Container.png"
 
 // Labels used by both the category tabs and the cluster dropdown.
 const categories = [

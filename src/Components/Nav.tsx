@@ -1,12 +1,19 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { Bed, ChevronDown, MapPin, Menu, TreePine, X } from 'lucide-react'
-import vector from '../assets/images/Home Image/Vector.png'
-import lioraImage from '../assets/images/Home Image/Image Container (3).png'
-import navaImage from '../assets/images/Home Image/Image Container (4).png'
-import arunaImage from '../assets/images/Home Image/Image Container (2).png'
-import veloraImage from '../assets/images/Home Image/Image Container (1).png'
-import serayaImage from '../assets/images/Home Image/Main Image.png'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import {
+  Bed,
+  ChevronDown,
+  MapPin,
+  Menu,
+  TreePine,
+  X,
+  homeVector as vector,
+  homeImageContainer3 as lioraImage,
+  homeImageContainer4 as navaImage,
+  homeImageContainer2 as arunaImage,
+  homeImageContainer1 as veloraImage,
+  homeMain as serayaImage,
+} from '../imports'
 
 const properties = [
   {
@@ -42,6 +49,7 @@ const properties = [
 ]
 
 function Nav() {
+  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false)
   const [selectedPropertyIndex, setSelectedPropertyIndex] = useState(2)
@@ -139,12 +147,22 @@ function Nav() {
           </NavLink>
           <NavLink
             to='/tour'
+            state={{ backgroundLocation: location }}
             onClick={closeMenus}
             className={({ isActive }) =>
               `bg-gray-200 px-3 py-2 ${isActive ? 'underline underline-offset-4 decoration-1' : ''}`
             }
           >
             Request tour
+          </NavLink>
+          <NavLink
+            to='/login'
+            onClick={closeMenus}
+            className={({ isActive }) =>
+              `py-1 ${isActive ? 'underline underline-offset-8 decoration-1' : ''}`
+            }
+          >
+            Login
           </NavLink>
         </div>
       </div>
@@ -269,6 +287,7 @@ function Nav() {
           </NavLink>
           <NavLink
             to='/tour'
+            state={{ backgroundLocation: location }}
             onClick={closeMenus}
             className={({ isActive }) =>
               `mt-2 rounded bg-gray-200 px-3 py-3 text-center ${
@@ -277,6 +296,15 @@ function Nav() {
             }
           >
             Request tour
+          </NavLink>
+          <NavLink
+            to='/login'
+            onClick={closeMenus}
+            className={({ isActive }) =>
+              `rounded px-3 py-3 hover:bg-gray-100 ${isActive ? 'underline underline-offset-4 decoration-1' : ''}`
+            }
+          >
+            Login
           </NavLink>
         </div>
       )}

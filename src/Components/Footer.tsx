@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
-import FooterImage from "../assets/images/Home Image/Image Container (4).png";
-import Logo from "../assets/images/Home Image/Vector.png";
+import { Link, useLocation } from "react-router-dom";
+import { homeImageContainer4 as FooterImage, homeVector as Logo } from "../imports";
+
+const footerRoutes: Record<string, string> = {
+  "Property listings": "/properties",
+  "Virtual tours": "/properties/aruna/type-a/ground-floor",
+  "Blog & articles": "/blogs",
+  FAQs: "/#faq",
+};
 
 const linkGroups = [
   { title: "Company", links: ["About us", "Careers", "Press & Media", "Opportunity"] },
@@ -10,6 +16,8 @@ const linkGroups = [
 ];
 
 export default function Footer() {
+  const location = useLocation();
+
   return (
     <footer className="text-white">
       {/* ================= BLACK PART: call to action ================= */}
@@ -23,6 +31,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/tour"
+                state={{ backgroundLocation: location }}
                 className="rounded-md bg-white px-5 py-3 text-sm font-semibold text-[#1c1c1a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c9a227]"
               >
                 Schedule a tour
@@ -94,11 +103,18 @@ export default function Footer() {
             {linkGroups.map((group, i) => (
               <div key={`${group.title}-${i}`} className="flex flex-col gap-2">
                 <p className="text-xs text-[#888]">{group.title}</p>
-                {group.links.map((label) => (
-                  <a key={label} href="#" className="text-[#ddd] hover:underline">
-                    {label}
-                  </a>
-                ))}
+                {group.links.map((label) => {
+                  const route = footerRoutes[label];
+                  return route ? (
+                    <Link key={label} to={route} className="text-[#ddd] hover:underline">
+                      {label}
+                    </Link>
+                  ) : (
+                    <a key={label} href="#" className="text-[#ddd] hover:underline">
+                      {label}
+                    </a>
+                  );
+                })}
               </div>
             ))}
           </div>
