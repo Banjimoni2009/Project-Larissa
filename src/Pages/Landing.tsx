@@ -244,9 +244,6 @@ function Landing() {
         </div>
         <img src={Black} alt="" className="w-full" />
       </div>
-      {/* Text below Black img */}
-      <p className="p-6 sm:p-10 text-center text-3xl sm:text-5xl font-medium">Facility & Amenities</p>
-
       {/* Facility img */}
       <Facilities />
       {/* Awards & Recognition */}
