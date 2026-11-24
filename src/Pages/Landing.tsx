@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+import useEmblaCarousel from "embla-carousel-react"
 import {
   ArrowLeft,
   ArrowRight,
@@ -5,6 +7,10 @@ import {
   Bed,
   Search,
   homeMain as LandingImg,
+  homeHero as HeroImg,
+  homeImage1 as LandingAlt1,
+  homeImage2 as LandingAlt2,
+  homeImage4 as LandingAlt3,
   homeAward as Award,
   homeSignature as Signature,
   homeHandHeart as HandHeart,
@@ -34,6 +40,29 @@ import Footer from "../Components/Footer"
 import Facilities from "../Components/Facilities"
 
 function Landing() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" })
+  const [activeSlide, setActiveSlide] = useState(0)
+  const landingSlides = [LandingImg, HeroImg, LandingAlt1, LandingAlt2, LandingAlt3]
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    const syncActiveSlide = () => setActiveSlide(emblaApi.selectedScrollSnap())
+    emblaApi.on("select", syncActiveSlide)
+    syncActiveSlide()
+
+    return () => {
+      emblaApi.off("select", syncActiveSlide)
+    }
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    const timer = window.setInterval(() => emblaApi.scrollNext(), 5000)
+    return () => window.clearInterval(timer)
+  }, [emblaApi])
+
   return (
     <div className="bg-gray-200">
       {/* 1ST Section */}
@@ -112,9 +141,33 @@ function Landing() {
 
       </div>
       {/* 2ND Section */}
-      <div>
-        <div>
-          <img src={LandingImg} alt="Modern Serenia homes at sunset" className="w-full" />
+      <div className="relative" role="region" aria-label="Serenia homes gallery" aria-roledescription="carousel">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
+            {landingSlides.map((image, index) => (
+              <div
+                className="embla__slide"
+                key={index}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${index + 1} of ${landingSlides.length}`}
+              >
+                <img src={image} alt="Modern Serenia homes at sunset" className="w-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2" aria-label="Choose a home photo">
+          {landingSlides.map((_, dotIndex) => (
+            <button
+              key={dotIndex}
+              type="button"
+              onClick={() => emblaApi?.scrollTo(dotIndex)}
+              aria-label={`Show photo ${dotIndex + 1}`}
+              aria-current={activeSlide === dotIndex ? "true" : undefined}
+              className={`h-1.5 w-6 rounded-full transition-all ${activeSlide === dotIndex ? "bg-white" : "bg-white/50"}`}
+            />
+          ))}
         </div>
       </div>
       {/* Discover section */}
