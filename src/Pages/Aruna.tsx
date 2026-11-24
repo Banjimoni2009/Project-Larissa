@@ -12,9 +12,10 @@ import {
   Ruler,
   ShieldCheck,
   Trees,
+  homeImage2 as typeAExterior,
+  homeImage4 as typeAExteriorAlt,
   propertyImage7 as arunaHero,
   propertyImage6 as arunaCommunity,
-  propertyImage7 as typeAImage,
   propertyImage10 as typeBImage,
   propertyImage6 as typeCImage,
   amenities4 as parkImage,
@@ -29,8 +30,8 @@ const homeTypes = [
   {
     name: "Aruna Type-A",
     description: "Compact & efficient living — minimal housing for practical family living.",
-    image: typeAImage,
-    alternateImages: [typeAImage, typeBImage, typeCImage],
+    image: typeAExterior,
+    alternateImages: [typeAExterior, typeAExteriorAlt, arunaHero],
     landArea: "2,500 ft²",
     buildingArea: "1,250 ft²",
     bedrooms: "3 Bedrooms",
@@ -42,7 +43,7 @@ const homeTypes = [
     name: "Aruna Type-B",
     description: "Spacious & stylish layout — perfect for growing families who need more room and modern comfort.",
     image: typeBImage,
-    alternateImages: [typeBImage, typeCImage, typeAImage],
+    alternateImages: [typeBImage, typeCImage, typeAExterior],
     landArea: "2,500 ft²",
     buildingArea: "1,600 ft²",
     bedrooms: "4 Bedrooms",
@@ -54,7 +55,7 @@ const homeTypes = [
     name: "Aruna Type-C",
     description: "Premium & spacious design — perfect for larger households seeking luxury and comfort.",
     image: typeCImage,
-    alternateImages: [typeCImage, typeAImage, typeBImage],
+    alternateImages: [typeCImage, typeAExterior, typeBImage],
     landArea: "3,200 ft²",
     buildingArea: "2,100 ft²",
     bedrooms: "4 Bedrooms",
@@ -217,7 +218,13 @@ function Aruna() {
                   </div>
 
                   <div className="relative min-h-[260px] overflow-hidden sm:min-h-[300px]">
-                    <img src={currentImage} alt={`${home.name} exterior`} className="absolute inset-0 h-full w-full object-cover" />
+                    {home.name === "Aruna Type-A" ? (
+                      <Link to="/properties/aruna/type-a" className="absolute inset-0 z-10" aria-label={`Open ${home.name} details`}>
+                        <img src={currentImage} alt={`${home.name} exterior`} className="h-full w-full object-cover" />
+                      </Link>
+                    ) : (
+                      <img src={currentImage} alt={`${home.name} exterior`} className="absolute inset-0 h-full w-full object-cover" />
+                    )}
                     <button
                       type="button"
                       onClick={() => changeSlide(home.name, -1, home.alternateImages.length)}
