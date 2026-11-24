@@ -47,7 +47,7 @@ export default function Carousel({ slides, label = "Featured homes", autoplayMs 
               aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}
             >
               <img src={slide.image} alt={slide.alt} className="absolute inset-0 h-full w-full object-cover object-center" />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/75" />
+              <div className="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/75" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-8 p-6 text-white sm:p-8 lg:p-7 xl:p-10">
                 <div className="max-w-[65%]">
                   <h2 className="text-xl font-semibold sm:text-2xl">{slide.title}</h2>

@@ -125,7 +125,7 @@ function ArunatypeA() {
 
   return (
     <main className="bg-[#f8f8f8] text-[#171717]">
-      <div className="mx-auto max-w-[1500px] px-4 md:px-8">
+      <div className="mx-auto max-w-375 px-4 md:px-8">
         <div className="flex min-h-11 items-center justify-between gap-3 text-[9px] text-[#777]">
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5">
             <Link to="/properties" className="hover:text-[#171717]">All clusters</Link>
@@ -142,9 +142,9 @@ function ArunatypeA() {
         </div>
 
         <section>
-          <div className="relative h-[310px] overflow-hidden bg-[#e6e6e6] sm:h-[430px] lg:h-[520px]">
+          <div className="relative h-77.5 overflow-hidden bg-[#e6e6e6] sm:h-107.5 lg:h-130">
             <img src={heroImages[activeHeroImage]} alt="Aruna Type A exterior" className="h-full w-full object-cover" />
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/50 to-transparent p-4">
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-linear-to-t from-black/50 to-transparent p-4">
               <span className="text-[9px] text-white">Aruna Type-A · Exterior view</span>
               <div className="flex gap-1.5">
                 {heroImages.map((image, index) => (
@@ -211,7 +211,7 @@ function ArunatypeA() {
                     <path d="M20 20l70 18M145 70l80 20M315 122l100 24M35 210l95 20M300 225l95 18M210 40l-30 70M420 190l-40 55" stroke="#fff" strokeWidth="6" fill="none" />
                     <circle cx="238" cy="142" r="13" fill="#56593B" stroke="white" strokeWidth="5" />
                   </svg>
-                  <MapPin size={16} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[130%] text-[#56593B]" />
+                  <MapPin size={16} className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[-130%] text-[#56593B]" />
                 </div>
                 <div className="divide-y divide-[#eeeeee] border border-[#eeeeee] px-3">
                   <p className="py-2 text-[9px] font-medium">This residence is near with:</p>
@@ -357,7 +357,7 @@ function ArunatypeA() {
               <h2 className="text-xs font-semibold">3D Preview</h2>
               <div className="group relative mt-3 overflow-hidden">
                 <img src={livingImage} alt="Aruna Type A living room" className="h-40 w-full object-cover" />
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent p-3 text-white">
+                <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/70 to-transparent p-3 text-white">
                   <p className="text-[10px] font-medium">Great experience</p>
                   <p className="mt-1 text-[8px]">Get a 3D preview with this feature before you buy it.</p>
                 </div>

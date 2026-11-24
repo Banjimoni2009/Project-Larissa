@@ -116,7 +116,7 @@ function Aruna() {
         <img
           src={arunaHero}
           alt="Aruna residence homes"
-          className="h-[270px] w-full object-cover object-center sm:h-[340px] lg:h-[440px]"
+          className="h-67.5 w-full object-cover object-center sm:h-85 lg:h-110"
         />
         <div className="absolute inset-x-4 bottom-0 mx-auto grid max-w-5xl translate-y-1/2 grid-cols-1 border border-[#eeeeee] bg-white shadow-sm sm:grid-cols-[0.8fr_1.2fr]">
           <div className="flex flex-col justify-center p-5 sm:p-7">
@@ -146,7 +146,7 @@ function Aruna() {
         <img
           src={arunaCommunity}
           alt="Contemporary homes in the Aruna community"
-          className="h-[190px] w-full object-cover sm:h-[280px] lg:h-[350px]"
+          className="h-47.5 w-full object-cover sm:h-70 lg:h-87.5"
         />
       </section>
 
@@ -217,7 +217,7 @@ function Aruna() {
                     </div>
                   </div>
 
-                  <div className="relative min-h-[260px] overflow-hidden sm:min-h-[300px]">
+                  <div className="relative min-h-65 overflow-hidden sm:min-h-75">
                     {home.name === "Aruna Type-A" ? (
                       <Link to="/properties/aruna/type-a" className="absolute inset-0 z-10" aria-label={`Open ${home.name} details`}>
                         <img src={currentImage} alt={`${home.name} exterior`} className="h-full w-full object-cover" />
@@ -241,7 +241,7 @@ function Aruna() {
                     >
                       <ArrowRight size={14} />
                     </button>
-                    <div className="absolute inset-x-0 bottom-0 flex gap-1 bg-gradient-to-t from-black/50 to-transparent p-3 pt-8">
+                    <div className="absolute inset-x-0 bottom-0 flex gap-1 bg-linear-to-t from-black/50 to-transparent p-3 pt-8">
                       {home.alternateImages.map((image, index) => (
                         <button
                           key={`${home.name}-${index}`}
@@ -318,7 +318,7 @@ function Aruna() {
         </div>
       </section>
 
-      <section className="relative h-[260px] overflow-hidden border-y border-[#eeeeee] bg-[#eee9d9] sm:h-[340px]" aria-label="Map of the Aruna residence area">
+      <section className="relative h-65 overflow-hidden border-y border-[#eeeeee] bg-[#eee9d9] sm:h-85" aria-label="Map of the Aruna residence area">
         <div
           className="absolute inset-0"
           style={{
